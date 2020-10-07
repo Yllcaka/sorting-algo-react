@@ -1,6 +1,6 @@
 //Selection sort implementation in JS
 
-const selectionSort = (list = [], change) => {
+const selectionSort = (list = [], change = console.log) => {
   // Create a copy of the list so that the beggining list doesnt change
   let usedList = [...list];
   //Begin the loop for the algorithm
@@ -14,7 +14,7 @@ const selectionSort = (list = [], change) => {
       let currentMin = usedList[min_index];
       usedList[min_index] = usedList[i];
       usedList[i] = currentMin;
-      change([...usedList]);
+      change([...usedList]); // use the change function
     }, 0);
   }
 };
